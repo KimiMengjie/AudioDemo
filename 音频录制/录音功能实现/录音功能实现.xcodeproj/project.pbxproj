@@ -12,6 +12,8 @@
 		3F75A6541DA676310026D91F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F75A6521DA676310026D91F /* Main.storyboard */; };
 		3F75A6561DA676310026D91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F75A6551DA676310026D91F /* Assets.xcassets */; };
 		3F75A6591DA676310026D91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F75A6571DA676310026D91F /* LaunchScreen.storyboard */; };
+		3FA8D3241DA6956300397D09 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA8D3231DA6956300397D09 /* libmp3lame.a */; };
+		3FA8D3281DA695C500397D09 /* lameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8D3271DA695C500397D09 /* lameTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,11 @@
 		3F75A6551DA676310026D91F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F75A6581DA676310026D91F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F75A65A1DA676310026D91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FA8D3221DA6956300397D09 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		3FA8D3231DA6956300397D09 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		3FA8D3251DA695C400397D09 /* 录音功能实现-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "录音功能实现-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FA8D3261DA695C500397D09 /* lameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lameTool.h; sourceTree = "<group>"; };
+		3FA8D3271DA695C500397D09 /* lameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lameTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA8D3241DA6956300397D09 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +62,17 @@
 		3F75A64D1DA676310026D91F /* 录音功能实现 */ = {
 			isa = PBXGroup;
 			children = (
+				3FA8D3261DA695C500397D09 /* lameTool.h */,
+				3FA8D3271DA695C500397D09 /* lameTool.m */,
+				3FA8D3221DA6956300397D09 /* lame.h */,
+				3FA8D3231DA6956300397D09 /* libmp3lame.a */,
 				3F75A64E1DA676310026D91F /* AppDelegate.swift */,
 				3F75A6501DA676310026D91F /* ViewController.swift */,
 				3F75A6521DA676310026D91F /* Main.storyboard */,
 				3F75A6551DA676310026D91F /* Assets.xcassets */,
 				3F75A6571DA676310026D91F /* LaunchScreen.storyboard */,
 				3F75A65A1DA676310026D91F /* Info.plist */,
+				3FA8D3251DA695C400397D09 /* 录音功能实现-Bridging-Header.h */,
 			);
 			path = "录音功能实现";
 			sourceTree = "<group>";
@@ -97,6 +110,7 @@
 					3F75A64A1DA676310026D91F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 6226KE6HJH;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F75A6511DA676310026D91F /* ViewController.swift in Sources */,
+				3FA8D3281DA695C500397D09 /* lameTool.m in Sources */,
 				3F75A64F1DA676310026D91F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,11 +274,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6226KE6HJH;
 				INFOPLIST_FILE = "录音功能实现/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/录音功能实现",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.kimi.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "录音功能实现/录音功能实现-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,11 +294,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6226KE6HJH;
 				INFOPLIST_FILE = "录音功能实现/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/录音功能实现",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.kimi.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "录音功能实现/录音功能实现-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +328,7 @@
 				3F75A65F1DA676310026D91F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
