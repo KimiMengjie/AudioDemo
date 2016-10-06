@@ -66,6 +66,20 @@ class ViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //结束录音
+        
+        //根据当前的录音时间，做处理
+        //如果录音不超过两秒，则删除录音
+        //如果超过，就正常处理
+        if record!.currentTime > 2 {
+            record?.stop()
+        }else{
+            print("录音时间太短")
+            //删除录音
+            //如果想要删除录音文件
+            record?.deleteRecording()
+        }
+        
+        print("结束录音")
         record?.stop()
     }
 
