@@ -53,6 +53,8 @@
 		3F910F501DA7F29A0068F0CA /* 309769.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F910F271DA7F29A0068F0CA /* 309769.mp3 */; };
 		3F910F511DA7F29A0068F0CA /* 339744.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F910F281DA7F29A0068F0CA /* 339744.mp3 */; };
 		3F910F521DA7F29A0068F0CA /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F910F291DA7F29A0068F0CA /* Musics.plist */; };
+		3F910F5A1DA7F48F0068F0CA /* QQLitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F910F591DA7F48F0068F0CA /* QQLitsTableViewController.swift */; };
+		3F910F5C1DA7F4B50068F0CA /* QQDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F910F5B1DA7F4B50068F0CA /* QQDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		3F910F271DA7F29A0068F0CA /* 309769.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 309769.mp3; sourceTree = "<group>"; };
 		3F910F281DA7F29A0068F0CA /* 339744.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 339744.mp3; sourceTree = "<group>"; };
 		3F910F291DA7F29A0068F0CA /* Musics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Musics.plist; sourceTree = "<group>"; };
+		3F910F591DA7F48F0068F0CA /* QQLitsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQLitsTableViewController.swift; sourceTree = "<group>"; };
+		3F910F5B1DA7F4B50068F0CA /* QQDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,9 @@
 		3F910EF71DA7EF370068F0CA /* QQDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3F910F531DA7F4530068F0CA /* Controller */,
+				3F910F541DA7F4530068F0CA /* Model */,
+				3F910F551DA7F4530068F0CA /* View */,
 			);
 			path = QQDetail;
 			sourceTree = "<group>";
@@ -207,6 +214,9 @@
 		3F910EF81DA7EF370068F0CA /* QQList */ = {
 			isa = PBXGroup;
 			children = (
+				3F910F561DA7F45F0068F0CA /* Controller */,
+				3F910F571DA7F45F0068F0CA /* Model */,
+				3F910F581DA7F45F0068F0CA /* View */,
 			);
 			path = QQList;
 			sourceTree = "<group>";
@@ -281,6 +291,50 @@
 				3F910F281DA7F29A0068F0CA /* 339744.mp3 */,
 			);
 			path = MP3s;
+			sourceTree = "<group>";
+		};
+		3F910F531DA7F4530068F0CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F910F5B1DA7F4B50068F0CA /* QQDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F910F541DA7F4530068F0CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F910F551DA7F4530068F0CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F910F561DA7F45F0068F0CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F910F591DA7F48F0068F0CA /* QQLitsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F910F571DA7F45F0068F0CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F910F581DA7F45F0068F0CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,7 +452,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F910F5C1DA7F4B50068F0CA /* QQDetailViewController.swift in Sources */,
 				3F910EF91DA7EF370068F0CA /* AppDelegate.swift in Sources */,
+				3F910F5A1DA7F48F0068F0CA /* QQLitsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
