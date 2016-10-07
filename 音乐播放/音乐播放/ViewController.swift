@@ -10,10 +10,11 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    
+
     lazy var player:AVAudioPlayer? = {
         //1.创建播放器,只能是本地，远程无法播放,这个类只能播放一个
         let url = Bundle.main.url(forResource: "简单爱.mp3", withExtension: nil)!
+        
         
         do {
             let player = try AVAudioPlayer(contentsOf: url)
@@ -34,6 +35,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func play(_ sender: UIButton) {
+        //调用音频会话
+        playBack()
+        
         player?.play()
     }
     
@@ -62,6 +66,25 @@ class ViewController: UIViewController {
     }
     @IBAction func volumn(_ sender: UISlider) {
         player?.volume = sender.value
+    }
+    
+    func playBack() -> Void {
+        //1.获取音频会话
+        let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
+        
+        do {
+            //2.设置会话类型
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            //3.激活会话
+            try audioSession.setActive(true)
+        } catch  {
+            print(error)
+        }
+        
+
+        
+
+        
     }
 
     override func viewDidLoad() {
